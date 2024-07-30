@@ -10,7 +10,11 @@ export default function RegisterPage() {
     
     function registerUser(ev) {
         ev.preventDefault(); // Prevent reload the page
-        axios.get('http://localhost:8080/api/test');
+        axios.post('/api/register', {
+            name,
+            email,
+            password
+        });
     }
 
     return (
