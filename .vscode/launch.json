@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BeApplication<be>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.booking.clone.be.BeApplication",
+            "projectName": "be",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
