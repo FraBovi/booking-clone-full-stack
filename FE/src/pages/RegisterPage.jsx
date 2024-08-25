@@ -8,13 +8,18 @@ export default function RegisterPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    function registerUser(ev) {
+    async function registerUser(ev) {
         ev.preventDefault(); // Prevent reload the page
-        axios.post('/api/register', {
-            name,
-            email,
-            password
-        });
+        try {
+            await axios.post('/api/register', {
+                name,
+                email,
+                password
+            });
+            alert('Registration successful. You can Login');
+        } catch(e) {
+            alert('Registration failed');
+        }
     }
 
     return (
@@ -31,7 +36,7 @@ export default function RegisterPage() {
                     <input type="password" placeholder="password"
                             value={password}
                             onChange={ev => setPassword(ev.target.value)}/>
-                    <button className="primary">Register</button>
+                    <button type="submit" className="primary">Register</button>
                     <div className="text-center py-2 text-gray-500">
                     Do you already have an account? <Link className="underline text-black" to={'/login'}>Login</Link>
                     </div>
